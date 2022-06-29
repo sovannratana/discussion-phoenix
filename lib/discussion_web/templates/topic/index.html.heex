@@ -1,0 +1,15 @@
+<div class="container">
+  <h3 class="my-3">Topics</h3>
+  <ul class="list-group">
+    <%= for topic <- @topics do  %>
+      <li class="list-group-item">
+        <%=topic.title%>
+      </li>
+    <% end %>
+  </ul>  
+  
+  <%= link to: Routes.topic_path(@conn, :new), class: "btn btn-outline-danger my-3" do %>
+    <p class="m-0">Add Topic</p>
+  <% end %>
+
+</div>

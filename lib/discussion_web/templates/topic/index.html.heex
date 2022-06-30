@@ -1,15 +1,30 @@
 <div class="container">
-  <h3 class="my-3">Topics</h3>
+  <h2 class="my-3">Topics</h2>
   <ul class="list-group">
     <%= for topic <- @topics do  %>
-      <li class="list-group-item">
-        <%=topic.title%>
-      </li>
+      <div>
+        <li class="list-group-item">
+          <div>
+            <h3 class="mb-2">
+              <%=topic.title%>
+            </h3>
+          </div>
+          <div class="container p-0">
+            <%= link to: Routes.topic_path(@conn, :edit, topic), class: "btn btn-outline-primary py-1" do %>
+              <p class="m-0 p-0">Edit</p>
+            <% end %>
+            
+            <%= link to: Routes.topic_path(@conn, :new), class: "btn btn-outline-danger py-1 px-2 mx-1" do %>
+              <p class="m-0 p-0">Delete</p>
+            <% end %>
+          </div>
+        </li>
+      </div>
     <% end %>
   </ul>  
   
-  <%= link to: Routes.topic_path(@conn, :new), class: "btn btn-outline-danger my-3" do %>
-    <p class="m-0">Add Topic</p>
+  <%= link to: Routes.topic_path(@conn, :new), class: "btn btn-dark my-3" do %>
+    <h5 class="m-0 p-2">Add Topic</h5>
   <% end %>
 
 </div>

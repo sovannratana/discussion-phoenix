@@ -14,7 +14,7 @@
               <p class="m-0 p-0">Edit</p>
             <% end %>
             
-            <%= link to: Routes.topic_path(@conn, :new), class: "btn btn-outline-danger py-1 px-2 mx-1" do %>
+            <%= link to: Routes.topic_path(@conn, :delete, topic), method: :delete ,class: "btn btn-outline-danger py-1 px-2 mx-1" do %>
               <p class="m-0 p-0">Delete</p>
             <% end %>
           </div>
@@ -23,7 +23,7 @@
     <% end %>
   </ul>  
   
-  <%= link to: Routes.topic_path(@conn, :new), class: "btn btn-dark my-3" do %>
+  <%= link to: Routes.topic_path(@conn, :new), class: "btn btn-dark my-3 px-1" do %>
     <h5 class="m-0 p-2">Add Topic</h5>
   <% end %>
 
